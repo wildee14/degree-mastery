@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gradute With Ease</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css"
+    />
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script src="/bundle.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/materialize.js"/>
+    <script>
+      $(document).ready(function () {
+        $('.dropdown-button').dropdown({
+          constrainWidth: false,
+          hover: true,
+          belowOrigin: true,
+          alignment: 'left'
+        });
+
+        $('.sidenav').sidenav();
+      });
+    </script>
+  </body>
+</html>
