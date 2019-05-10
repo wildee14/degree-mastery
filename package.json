@@ -9,7 +9,8 @@
     "build": "webpack",
     "run-backend": "node server.js",
     "dev-server": "webpack-dev-server",
-    "dev": "concurrently --kill-others-on-fail \"npm run run-backend\" \"npm run dev-server\""
+    "dev": "concurrently --kill-others-on-fail \"npm run run-backend\" \"npm run dev-server\"",
+    "start": "concurrently --kill-others-on-fail \"npm run run-backend\" \"npm run dev-server\""
   },
   "dependencies": {
     "axios": "^0.18.0",
