@@ -17,9 +17,9 @@ class BlogDirectory extends Component {
   componentDidMount() {
     var params = this.props.location.pathname.replace("/blogs/", "");
     if (params.includes("/")) {
-      var fetchUrl = "http://localhost:5000/api/testblogs";
+      var fetchUrl = "/api/testblogs";
     } else {
-      var fetchUrl = "http://localhost:5000/api/testblogs/" + params;
+      var fetchUrl = "/api/testblogs/" + params;
     }
 
     axios.get(fetchUrl)
@@ -30,7 +30,7 @@ class BlogDirectory extends Component {
           })
         );
 
-    axios.get("http://localhost:5000/api/categories")
+    axios.get("/api/categories")
       .then(function(res){return res.data;})
       .then(resjson =>
         this.setState({

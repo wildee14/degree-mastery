@@ -15,9 +15,9 @@ class LandingPage extends Component {
   componentDidMount() {
     var params = this.props.location.pathname.replace("/blogs/", "");
     if (params.includes("/")) {
-      var fetchUrl = "http://localhost:5000/api/testblogs";
+      var fetchUrl = "/api/testblogs";
     } else {
-      var fetchUrl = "http://localhost:5000/api/testblogs/" + params;
+      var fetchUrl = "/api/testblogs/" + params;
     }
     axios.get(fetchUrl)
       .then(res => res.data)
@@ -27,7 +27,7 @@ class LandingPage extends Component {
         })
       );
 
-    axios.get("http://localhost:5000/api/categories")
+    axios.get("/api/categories")
       .then(res => res.data)
       .then(resjson =>
         this.setState({
