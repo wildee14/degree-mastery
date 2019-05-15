@@ -5,7 +5,6 @@ import AppRouter from "./routers/AppRouter";
 import configureStore from "./store/configureStore";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
-import registerServiceWorker from "./components/registerServiceWorker";
 
 const store = configureStore();
 
@@ -16,4 +15,3 @@ const jsx = (
 );
 
 ReactDOM.render(jsx, document.getElementById("app"));
-registerServiceWorker();
