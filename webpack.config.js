@@ -31,7 +31,6 @@ module.exports = {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.optimize.AggressiveMergingPlugin(),
     new CompressionPlugin({
@@ -44,6 +43,7 @@ module.exports = {
   ],
   devtool: "cheap-module-eval-source-map",
   devServer: {
-    contentBase: path.join(__dirname, "public")
-  }
+    contentBase: path.join(__dirname, "public"),
+    compress: true,
+  },
 };
