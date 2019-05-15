@@ -41,7 +41,8 @@ module.exports = {
       minRatio: 0.8
     })
   ],
-  devtool: "cheap-module-eval-source-map",
+  devtool: false,
+  // "cheap-module-eval-source-map",
   devServer: {
     contentBase: path.join(__dirname, "public"),
     compress: true,
