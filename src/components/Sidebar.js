@@ -14,7 +14,7 @@ class Sidebar extends Component {
                   <Link to={"/blogs/"}>
                     <img
                       className="pic"
-                      src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0c4b5fcc53abd6158286dc86a9be4bee&auto=format"
+                      // src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0c4b5fcc53abd6158286dc86a9be4bee&auto=format"
                     />
                   </Link>
                 </div>
@@ -31,7 +31,7 @@ class Sidebar extends Component {
                   <Link to={"/blogs/"}>
                     <img
                       className="pic"
-                      src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0c4b5fcc53abd6158286dc86a9be4bee&auto=format"
+                      // src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0c4b5fcc53abd6158286dc86a9be4bee&auto=format"
                     />
                   </Link>
                 </div>
@@ -58,7 +58,7 @@ class Sidebar extends Component {
                   <Link to={"/blogs/"}>
                     <img
                       className="pic"
-                      src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0c4b5fcc53abd6158286dc86a9be4bee&auto=format"
+                      // src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0c4b5fcc53abd6158286dc86a9be4bee&auto=format"
                     />
                   </Link>
                 </div>

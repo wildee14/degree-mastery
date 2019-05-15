@@ -39,8 +39,8 @@ class BlogDirectory extends Component {
       );
   }
 
-  testImage1 =
-    "https://images.unsplash.com/photo-1534009916851-7850ba974f9c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dccb7f58b57f6c01c25fb9cc9fd3163e&auto=format&fit=crop";
+  // testImage1 =
+  //   "https://images.unsplash.com/photo-1534009916851-7850ba974f9c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=dccb7f58b57f6c01c25fb9cc9fd3163e&auto=format&fit=crop";
 
   render() {
     return (
