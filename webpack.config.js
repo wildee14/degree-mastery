@@ -1,4 +1,6 @@
 const path = require("path");
+var webpack = require('webpack');
+var CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   entry: { index: ["babel-polyfill", "./src/app.jsx"] },
@@ -15,24 +17,31 @@ module.exports = {
         query:
           {
             presets:['es2015',"stage-0",'react']
-          }
+          },
     },
       {
         test: /\.s?css$/,
         use: ["style-loader", "css-loader", "sass-loader"]
       },
     ],
-    plugins: [
-      new webpack.DefinePlugin({ // <-- key to reducing React's size
-        'process.env': {
-          'NODE_ENV': JSON.stringify('production')
-        }
-      }),
-      new webpack.optimize.DedupePlugin(), //dedupe similar code 
-      new webpack.optimize.UglifyJsPlugin(), //minify everything
-      new webpack.optimize.AggressiveMergingPlugin()//Merge chunks 
-    ],
   },
+  plugins: [
+    new webpack.DefinePlugin({ //<--key to reduce React's size
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.AggressiveMergingPlugin(),
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    })
+  ],
   devtool: "cheap-module-eval-source-map",
   devServer: {
     contentBase: path.join(__dirname, "public")
