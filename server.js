@@ -4,7 +4,7 @@ const sqlite3 = require("sqlite3");
 const app = express();
 var cors = require("cors");
 app.use(cors());
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8081;
 
 app.get('*.js', function (req, res, next) {
   req.url = req.url + '.gz';
