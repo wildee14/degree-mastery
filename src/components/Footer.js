@@ -12,8 +12,8 @@ const Footer = props => (
           <br />
           for how you too can graduate early.
         </h1>
-        <a target="_blank" href="https://www.instagram.com/degreemastery101/"><img src="/images/ig.svg" className="social-icons" /></a>
-        <a target="_blank" href="https://www.youtube.com/channel/UCHm1xZXGiawXUKr5ownZ6SA?view_as=public"><img src="/images/yt.svg" className="social-icons" /></a>
+        <a target="_blank" rel="noreferrer" href="https://www.instagram.com/degreemastery101/"><img src="/images/ig.svg" className="social-icons" /></a>
+        <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCHm1xZXGiawXUKr5ownZ6SA?view_as=public"><img src="/images/yt.svg" className="social-icons" /></a>
       </div>
     </div>
   </footer>

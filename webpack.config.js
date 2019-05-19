@@ -1,6 +1,8 @@
 const path = require("path");
 var webpack = require('webpack');
 var CompressionPlugin = require('compression-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: { index: ["./src/app.jsx"] },
@@ -26,6 +28,27 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin({
+      include: /\.js$/
+    })]
+  },
+  plugins: [	 
+    new webpack.DefinePlugin({ //<--key to reduce React's size	    new webpack.DefinePlugin({ //<--key to reduce React's size
+      'process.env': {	      
+        'NODE_ENV': JSON.stringify('production')	        
+      }	     
+    }),	    
+    new webpack.optimize.AggressiveMergingPlugin(),
+    new CompressionPlugin({	   
+      asset: "[path].gz[query]",
+      algorithm: "gzip",	      
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,	      
+      minRatio: 0.8	      
+    })
+  ],
 
   devtool: false,
   devServer: {
