@@ -63,7 +63,6 @@ class BlogPageDirectory extends Component {
       return (
         <div>
           <Header />
-          <HeaderImage />
           <div className="center">
             <div key={this.state.blog.url}>
               <h1>
@@ -78,7 +77,11 @@ class BlogPageDirectory extends Component {
               </p>
               {vidLink}
               {podLink}
-              <div className="blogText">{reactElement}</div>
+              <div className="row">
+                <div className="col l8 m10 offset-l2 offset-m1 s12">
+                  <div className="blogText">{reactElement}</div>
+                </div>
+              </div>
             </div>
             <Footer />
           </div>

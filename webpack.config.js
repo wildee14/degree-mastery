@@ -1,15 +1,16 @@
 const path = require("path");
 var webpack = require('webpack');
 var CompressionPlugin = require('compression-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: { index: ["./src/app.jsx"] },
   output: {
     path: path.join(__dirname, "public"),
+    chunkFilename: '[name].bundle.js',
     filename: "bundle.js"
   },
+  mode: 'production',
   module: {
     rules: [
       { 
