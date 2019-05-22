@@ -42,7 +42,7 @@ class LandingPage extends Component {
         <Header />
         <HeaderImage />
         <div className="row background">
-          <div className="col xl9 l9 m12 s12 ">
+          <div className="col xl9 l9 m12 s12">
             <div className="App">
               <div>
                 <h1 className="center posts">

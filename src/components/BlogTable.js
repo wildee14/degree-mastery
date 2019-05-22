@@ -15,7 +15,7 @@ class BlogTable extends React.Component {
             <tr>
               <th>Post</th>
               <th>Date</th>
-              <th>Topics</th>
+              <th>Tags</th>
               <th>Brief Snippet</th>
             </tr>
           </thead>

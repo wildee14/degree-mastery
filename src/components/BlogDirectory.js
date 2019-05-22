@@ -48,7 +48,7 @@ class BlogDirectory extends Component {
         <Header />
         <HeaderImage />
         <div className="row background">
-          <div className="col xl9 l9 m12 s12">
+          <div className="col xl9 l9 m10 s10">
             <div className="App">
               <div>
                 <h1 className="center posts">
@@ -60,7 +60,7 @@ class BlogDirectory extends Component {
               </div>
             </div>
           </div>
-          <div className="col xl3 l3 m12 s12">
+          <div className="col xl3 l3 m2 s2">
             <Sidebar categories={this.state.categories} />
           </div>
         </div>

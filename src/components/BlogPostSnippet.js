@@ -7,7 +7,7 @@ class BlogPageSnippet extends React.Component {
     if (this.props.blog.tags) {
       var categories = (
         <div>
-            Topics:
+            Tags:
             {this.props.blog.tags.split(",").map((category, index) => (
               <NavLink
                 key={category}
@@ -23,14 +23,14 @@ class BlogPageSnippet extends React.Component {
     } else {
       var categories = <p />;
     }
-
+    let styles = {
+      margin: `5%`
+    }
     return (
       <div className="card-flex">
-        <div className="card hoverable">
+        <div className="card hoverable" style={styles}>
           <div className="card-image">
-            <Link to={"/blog/" + this.props.blog.url}>
-              <img className="pic" width="100%" height="100%" />
-            </Link>
+              <img src="/images/test.jpg" />
           </div>
           <div className="card-content">
             <h1 className="card-title">
@@ -39,11 +39,10 @@ class BlogPageSnippet extends React.Component {
             <p className="author">
               {this.props.blog.author.LastName},
               {this.props.blog.author.FirstName}
-              <br />
+              &nbsp; &nbsp;| &nbsp;&nbsp;
               {moment(this.props.blog.date).fromNow()}
-              <br />
             </p>
-            {categories}
+            <div className="tags">{categories}</div>
             <p className="snippet">
               {this.props.blog.snippet}.....
               <br />
