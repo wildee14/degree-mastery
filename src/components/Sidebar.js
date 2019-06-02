@@ -53,7 +53,7 @@ class Sidebar extends Component {
                   </Link>
                 </div>
                 <div className="card-content">
-                  <span className="overflow-text card-title">Tags:</span>
+                  <span className="overflow-text card-title">Popular Tags:</span>
                   <ul>
                     {this.props.categories.map((category, index) => (
                       <li className="left-align collection">

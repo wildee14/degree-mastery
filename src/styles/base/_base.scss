@@ -247,8 +247,13 @@ p {
 }
 .card-flex{
 }
-.collection {
+.collection-item {
   text-align: center;
+}
+.blogText{
+  .collection-item {
+    text-align: center;
+  }
 }
 @media (max-width: 675px) {
   .card-flex {

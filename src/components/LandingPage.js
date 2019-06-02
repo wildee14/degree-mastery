@@ -50,13 +50,16 @@ class LandingPage extends Component {
                 </h1>
               </div>
               <div className="box">
-                {this.state.blogs.map(blog => (
-                  <BlogPostSnippet
-                    key={blog.url}
-                    blog={blog}
-                    image={this.testImage1}
-                  />
-                ))}
+                {this.state.blogs
+                  .sort((a,b) => new Date(b.date) - new Date(a.date))
+                  .map(blog => (
+                    <BlogPostSnippet
+                      key={blog.url}
+                      blog={blog}
+                      image={this.testImage1}
+                    />
+                  ))
+                }
               </div>
             </div>
           </div>
