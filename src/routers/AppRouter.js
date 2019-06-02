@@ -13,8 +13,8 @@ const AppRouter = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={withRouter(LandingPage)} />
+      <Route path="/blogs" component={withRouter(BlogDirectory)} />
       <Route path="/blogs/:category" component={withRouter(LandingPage)} />
-      <Route exact path="/blogs" component={withRouter(BlogDirectory)} />
       <Route path="/blog/:id" component={withRouter(BlogPageDirectory)} />
       <Route exact path="/blog" component={withRouter(LandingPage)} />
       <Route exact path="/podcast" component={withRouter(BodyFlashy)} />

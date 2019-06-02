@@ -21,7 +21,7 @@ class BlogPageSnippet extends React.Component {
         </div>
       );
     } else {
-      var categories = <p />;
+      var categories = <div />;
     }
     let styles = {
       margin: `5%`
@@ -29,9 +29,6 @@ class BlogPageSnippet extends React.Component {
     return (
       <div className="card-flex">
         <div className="card hoverable" style={styles}>
-          <div className="card-image">
-              <img src="/images/test.jpg" />
-          </div>
           <div className="card-content">
             <h1 className="card-title">
               <strong className="bolder-font">{this.props.blog.title}</strong>
@@ -40,7 +37,7 @@ class BlogPageSnippet extends React.Component {
               {this.props.blog.author.LastName},
               {this.props.blog.author.FirstName}
               &nbsp; &nbsp;| &nbsp;&nbsp;
-              {moment(this.props.blog.date).fromNow()}
+              {moment(this.props.blog.date).calendar() }
             </p>
             <div className="tags">{categories}</div>
             <p className="snippet">

@@ -56,7 +56,6 @@ class LandingPage extends Component {
                     <BlogPostSnippet
                       key={blog.url}
                       blog={blog}
-                      image={this.testImage1}
                     />
                   ))
                 }
