@@ -17,6 +17,7 @@ body {
 
 a {
   color: indianred;
+  padding: 10px
 }
 
 a:hover {
@@ -296,10 +297,14 @@ p {
 
 .footer {
 }
-
+.card-title {
+  margin: 0;
+}
+#mc_embed_signup{
+  text-align: center;
+}
 .footer-text {
   margin: 0px;
-  padding-top: 50px;
   color: white;
 }
 

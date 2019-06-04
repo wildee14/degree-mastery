@@ -71,7 +71,7 @@ class BlogPageDirectory extends Component {
               <p className="author">
                 Author: {this.state.blog.lastName},{this.state.blog.firstName}
                 <br />
-                {moment(this.state.blog.date).fromNow()}
+                {moment(this.state.blog.date).calendar() }
                 <br />
                 {this.state.blog.tags}
               </p>

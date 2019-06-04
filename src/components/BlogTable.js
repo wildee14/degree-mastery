@@ -10,13 +10,13 @@ class BlogTable extends React.Component {
     ));
     return (
       <div className="table">
-        <table className="striped ">
+        <table className="responsive-table striped">
           <thead>
             <tr>
-              <th>Post</th>
-              <th>Date</th>
-              <th>Tags</th>
-              <th>Brief Snippet</th>
+              <th width="20%">Post</th>
+              <th width="10%">Date</th>
+              <th width="20%">Tags</th>
+              <th width="50%">Brief Snippet</th>
             </tr>
           </thead>
           <tbody>{rows}</tbody>
