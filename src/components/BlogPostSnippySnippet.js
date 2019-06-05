@@ -29,7 +29,7 @@ class BlogPostSnippySnippet extends React.Component {
             {this.props.blog.title}
           </Link>
         </td>
-        <td>{moment(this.props.blog.date).fromNow()}</td>
+        <td>{moment(this.props.blog.date).calendar()}</td>
         {categories}
         <td className="snippet">{this.props.blog.snippet}</td>
       </tr>

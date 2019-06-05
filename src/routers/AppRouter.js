@@ -7,6 +7,7 @@ import BodyFlashy from "../components/BodyFlashy";
 import BlogPageDirectory from "../components/BlogPageDirectory";
 import LandingPage from "../components/LandingPage";
 import BlogDirectory from "../components/BlogDirectory";
+import AboutMe from "../components/AboutMe";
 import {withRouter} from 'react-router';
 
 const AppRouter = () => (
@@ -17,6 +18,7 @@ const AppRouter = () => (
       <Route path="/blogs/:category" component={withRouter(LandingPage)} />
       <Route path="/blog/:id" component={withRouter(BlogPageDirectory)} />
       <Route exact path="/blog" component={withRouter(LandingPage)} />
+      <Route exact path="/about-me" component={withRouter(AboutMe)} />
       <Route exact path="/podcast" component={withRouter(BodyFlashy)} />
       <Route exact path="/video" component={withRouter(BodyFlashy)} />
       <Route component={withRouter(NotFoundPage)} />
