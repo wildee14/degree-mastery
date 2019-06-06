@@ -93,12 +93,21 @@ p {
   margin-top: 5px !important;
   font-weight: 300;
   font-size: 1.8rem;
+  text-align: left;
 }
 
 .blogText {
   padding: 10px 40px;
   text-align: left;
+  line-height: 1.5em;
+  font-family: proxima-nova,Helvetica Neue,Arial,sans-serif!important;
+  letter-spacing: -.010em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; 
 }
+
+
+
 .left-align{
   text-align: left;
 }

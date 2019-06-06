@@ -69,7 +69,7 @@ class BlogPageDirectory extends Component {
                 <strong className="bolder-font">{this.state.blog.title}</strong>
               </h1>
               <p className="author">
-                Author: {this.state.blog.lastName},{this.state.blog.firstName}
+                POSTED BY {this.state.blog.firstName + " "+this.state.blog.lastName}
                 <br />
                 {moment(this.state.blog.date).calendar() }
                 <br />
