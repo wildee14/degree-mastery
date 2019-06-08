@@ -9,10 +9,20 @@ import TopicSnippet from "./TopicSnippet";
 
 class TopicDirectory extends Component {
   state = {
-    topics: [
-    "Budgeting","Course Flow Planning","Summer School","Outside University Courses","Grad School","Getting Permission","Jobs/Interviews","friends and social life","tutoring","Mindset","Student Loans","Time Management","Minors"]
+    topics: []
   };
 
+  componentDidMount() {
+    var fetchUrl = "/api/topics" ;
+    axios.get(fetchUrl)
+      .then(res => res.data)
+      .then(resjson =>
+        this.setState({
+          topics: resjson
+        })
+      );
+
+  }
   render() {
     return (
       <div>
@@ -30,10 +40,10 @@ class TopicDirectory extends Component {
                 {this.state.topics
                   .map(topic => (
                     <TopicSnippet
-                      
-                      key={topic}
-                      title={topic}
-                      image={"/images/" + topic.replace(" ","-") + ".jpg"}
+                      key={topic.topicName}
+                      title={topic.topicLongName}
+                      shortTitle={topic.topicName}
+                      image={"/images/" + topic.topicName + ".jpg"}
                     />
                   ))
                 }

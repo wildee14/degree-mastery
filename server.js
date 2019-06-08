@@ -224,6 +224,85 @@ app.get("/api/categories", (req, res) => {
   });
 });
 
+app.get("/api/topic/:topic", (req, res) => {
+  var blogs = [];
+  // open the database
+  let db = new sqlite3.Database("./chinook.db", sqlite3.OPEN_READWRITE, err => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log("Connected to the chinook database.");
+  });
+
+  var test = db.serialize(() => {
+    db.each(
+      `SELECT b.BlogId as BlogId, b.Title as Title, b.AuthorId as AuthorId, b.Body as Body,
+       b.Date as Date, b.Tags as Tags, a.LastName as LastName, a.FirstName as FirstName, b.Snippet as Snippet, b.URL as URL       
+       FROM blogs b
+       JOIN authors a on a.AuthorId = b.AuthorId
+       JOIN Topics t on t.TopicId = b.Topic
+       WHERE t.TopicName like "%${req.params.topic}%";
+       `,
+      (err, row) => {
+        if (err) {
+          console.error(err.message);
+        }
+
+        if (!!row.BlogId)
+          blogs.push({
+            blogId: row.BlogId,
+            title: row.Title,
+            author: { LastName: row.LastName, FirstName: row.FirstName },
+            body: row.Body,
+            date: row.Date,
+            tags: row.Tags,
+            snippet: row.Snippet,
+            url: row.URL
+          });
+      }
+    );
+  });
+  db.close(err => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log("Close the database connection.");
+    res.send({ blogs });
+  });
+});
+
+app.get("/api/topics", (req, res) => {
+  var topics = [];
+  // open the database
+  let db = new sqlite3.Database("./chinook.db", sqlite3.OPEN_READWRITE, err => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log("Connected to the chinook database.");
+  });
+
+  var test = db.serialize(() => {
+    db.each(
+      `SELECT TopicName,TopicLongName 
+       FROM Topics;`,
+      (err, row) => {
+        if (err) {
+          console.error(err.message);
+        }
+
+        topics.push({"topicName": row.TopicName, "topicLongName": row.TopicLongName});
+      }
+    );
+  });
+  db.close(err => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log("Close the database connection.");
+    res.send(topics);
+  });
+});
+
 if (process.env.NODE_ENV === "production") {
   // Serve any static files
   app.use(express.static(path.join(__dirname, "public")));

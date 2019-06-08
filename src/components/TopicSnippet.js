@@ -12,9 +12,9 @@ class TopicSnippet extends React.Component {
       <div className="card-flexier">
         <div className="card hoverable" style={styles}>
           <div className="card-image">
-            <a  href={"/topic/" + (this.props.title.replace(/ /g, "-"))}><span></span></a>
+            <Link to={"/topic/" + (this.props.shortTitle)}><span></span></Link>
             <img src="/images/budgeting.jpeg" />
-            <span className="card-title topic-card">{this.props.title}</span>
+            <span className="card-title topic-card topic-text">{this.props.title}</span>
           </div>
         </div>
       </div>
