@@ -39,6 +39,11 @@ class Header extends Component {
                     About Me
                   </NavLink>
                 </li>
+                <li className="nav-cell">
+                  <NavLink activeClassName="is-active" to="/topics">
+                    Topics
+                  </NavLink>
+                </li>
               </ul>
 
             </div>
