@@ -17,7 +17,7 @@ class AboutMe extends Component {
 
                 <div className="card">
                   <div className="card-image">
-                    <img className="responsive-img" src="/images/aboutme.jpg" />
+                    <img className="responsive-img" src="/images/about-me.jpg" />
                   </div>
                   <div className="card-content">
                     <div className="blogText">
