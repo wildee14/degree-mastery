@@ -13,7 +13,7 @@ class TopicDirectory extends Component {
   };
 
   componentDidMount() {
-    var fetchUrl = "/api/topics" ;
+    var fetchUrl = "http://localhost:8081/api/topics" ;
     axios.get(fetchUrl)
       .then(res => res.data)
       .then(resjson =>

@@ -24,8 +24,15 @@ class TopicPage extends Component {
           blogs: resjson.blogs
         })
       );
-
+    axios.get("/api/categories")
+    .then(res => res.data)
+    .then(resjson =>
+      this.setState({
+        categories: resjson
+      })
+    );
   }
+
 
   render() {
     return (
@@ -33,24 +40,27 @@ class TopicPage extends Component {
         <Header />
         <HeaderImage />
         <div className="row background">
-          <div className="col xl8 l8 m8 s8">
+          <div className="col xl9 l9 m10 s10">
             <div className="App">
               <div>
                 <h1 className="center posts">
-                  <strong>{this.state.topic.replace("-",/ /g)}</strong>
+                  <strong>Blog Directory</strong>
                 </h1>
-              </div>
-              <div className="box">
-                {this.state.blogs
-                  .map(blog => (
-                    <BlogPostSnippet
-                      key={blog.url}
-                      blog={blog}
-                    />
-                  ))
-                }
+                <div className="box">
+                  {this.state.blogs
+                    .map(blog => (
+                      <BlogPostSnippet
+                        key={blog.url}
+                        blog={blog}
+                      />
+                    ))
+                  }               
+                 </div>
               </div>
             </div>
+          </div>
+          <div className="col xl3 l3 m2 s2">
+            <Sidebar categories={this.state.categories} />
           </div>
         </div>
         <Footer />
@@ -58,5 +68,4 @@ class TopicPage extends Component {
     );
   }
 }
-
 export default TopicPage;
