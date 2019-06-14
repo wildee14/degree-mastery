@@ -6,15 +6,15 @@ import sp from 'synchronized-promise';
 var routes = []
 
 async function getRoutes () {
-  let values1 = axios.get("http://localhost:8081/api/topics")
+  let values1 = axios.get("/api/topics")
     .then(res => res.data)
     .then(resjson => resjson.map(a => "topic/" + a.topicName));
 
-  let values2 = axios.get("http://localhost:8081/api/categories")
+  let values2 = axios.get("/api/categories")
     .then(res => res.data)
     .then(resjson => resjson.map(a => "blogs/" + a.replace(" ","")));
   
-  let values3 = axios.get("http://localhost:8081/api/testblogs")
+  let values3 = axios.get("/api/testblogs")
     .then(res => res.data)
     .then(resjson => resjson.blogs.map(a => "blog/" + a.url));
   

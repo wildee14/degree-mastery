@@ -13,7 +13,7 @@ class AboutMe extends Component {
           <Header />
           <div className="center">
             <div className="row">
-              <div className="col l6 m8 offset-l3 offset-m2 s12">
+              <div className="col l8 m10 offset-l2 offset-m1 s12">
 
                 <div className="card">
                   <div className="card-image">

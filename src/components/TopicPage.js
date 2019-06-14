@@ -9,13 +9,12 @@ import axios from "axios";
 class TopicPage extends Component {
   state = {
     blogs: [],
-    categories: [],
     topic: ""
   };
 
   componentDidMount() {
     var topic = this.props.location.pathname.replace("/topic/", "");
-    var fetchUrl = "/api/topic/" + topic;
+    var fetchUrl ="/api/topic/" + topic;
     this.setState({topic: topic});
     axios.get(fetchUrl)
       .then(res => res.data)
@@ -24,13 +23,6 @@ class TopicPage extends Component {
           blogs: resjson.blogs
         })
       );
-    axios.get("/api/categories")
-    .then(res => res.data)
-    .then(resjson =>
-      this.setState({
-        categories: resjson
-      })
-    );
   }
 
 
@@ -60,7 +52,7 @@ class TopicPage extends Component {
             </div>
           </div>
           <div className="col xl3 l3 m2 s2">
-            <Sidebar categories={this.state.categories} />
+            <Sidebar />
           </div>
         </div>
         <Footer />

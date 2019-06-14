@@ -6,6 +6,7 @@ import AppRouter from "../routers/AppRouter";
 class Header extends Component {
   render() {
     return (
+      <div>
       <header>
         <nav className="red darken-3">
           <div className="nav-wrapper">
@@ -45,12 +46,29 @@ class Header extends Component {
                   </NavLink>
                 </li>
               </ul>
-
             </div>
           </div>
         </nav>
-             
+
       </header>
+      <div className="mobile-friendly">
+      <NavLink to="/blogs">
+        Directory
+        </NavLink>
+      <NavLink
+        to="/blog"
+      >
+        Blog
+        </NavLink>
+      <NavLink to="/about-me">
+        About Me
+        </NavLink>
+      <NavLink to="/topics">
+        Topics
+        </NavLink>
+    </div>
+    </div>
+
     );
   }
 }

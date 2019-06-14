@@ -10,7 +10,7 @@ class BlogPageDirectory extends Component {
   state = { blog: [] };
   componentDidMount() {
     axios.get(
-      "/api/testblog/" +
+     "/api/testblog/" +
         this.props.location.pathname.replace("/blog/", "")
     )
       .then(res => res.data)

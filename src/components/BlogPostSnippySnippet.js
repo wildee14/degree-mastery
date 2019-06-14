@@ -31,7 +31,7 @@ class BlogPostSnippySnippet extends React.Component {
         </td>
         <td>{moment(this.props.blog.date).calendar()}</td>
         {categories}
-        <td className="snippet">{this.props.blog.snippet}</td>
+        <td className="snippet">{this.props.blog.snippet.substring(0, 50)}..</td>
       </tr>
     );
   }

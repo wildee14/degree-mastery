@@ -10,16 +10,15 @@ import axios from "axios";
 
 class BlogDirectory extends Component {
   state = {
-    blogs: [],
-    categories: []
+    blogs: []
   };
 
   componentDidMount() {
     var params = this.props.location.pathname.replace("/blogs/", "");
     if (params.includes("/")) {
-      var fetchUrl = "/api/testblogs";
+      var fetchUrl ="/api/testblogs";
     } else {
-      var fetchUrl = "/api/testblogs/" + params;
+      var fetchUrl ="/api/testblogs/" + params;
     }
 
     axios.get(fetchUrl)
@@ -30,13 +29,6 @@ class BlogDirectory extends Component {
           })
         );
 
-    axios.get("/api/categories")
-      .then(function(res){return res.data;})
-      .then(resjson =>
-        this.setState({
-          categories: resjson
-        })
-      );
   }
 
   // testImage1 =
@@ -48,20 +40,20 @@ class BlogDirectory extends Component {
         <Header />
         <HeaderImage />
         <div className="row background">
-          <div className="col xl9 l9 m10 s10">
+          <div className="col xl12 l12 m12 s12">
             <div className="App">
               <div>
                 <h1 className="center posts">
                   <strong>Blog Directory</strong>
                 </h1>
-                <div className="box">
+                <div>
                   <BlogTable blogs={this.state.blogs} />
                 </div>
               </div>
             </div>
           </div>
-          <div className="col xl3 l3 m2 s2">
-            <Sidebar categories={this.state.categories} />
+          <div className="col xl8 offset-xl2 l8 offset-l2 m10 offset-m1 s12">
+            <Sidebar  />
           </div>
         </div>
         <Footer />

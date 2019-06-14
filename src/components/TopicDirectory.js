@@ -9,11 +9,11 @@ import TopicSnippet from "./TopicSnippet";
 
 class TopicDirectory extends Component {
   state = {
-    topics: []
+    topics: [],
   };
 
   componentDidMount() {
-    var fetchUrl = "/api/topics" ;
+    var fetchUrl ="/api/topics" ;
     axios.get(fetchUrl)
       .then(res => res.data)
       .then(resjson =>
@@ -50,7 +50,7 @@ class TopicDirectory extends Component {
               </div>
             </div>
           </div>
-            {/* <Sidebar /> */}
+            <Sidebar />
         </div>
         <Footer />
       </div>

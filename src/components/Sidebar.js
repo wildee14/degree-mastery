@@ -1,24 +1,39 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 class Sidebar extends Component {
+  state = {
+    categories: []
+  };
+
+  componentDidMount() {
+    axios.get("/api/categories")
+      .then(function(res){return res.data;})
+      .then(resjson =>
+        this.setState({
+          categories: resjson
+        })
+      );
+  }
   render() {
     return (
       <div >
 
         <div className="container sidebar">
           <div className="row">
-            <div className="col xl12 l12 m6 s12">
+            <div className="col xl12 l12 m12 s12">
               <div className="card">
                 <div className="card-content">
                   <h2 className="card-title">
                     Early Grad Video Course
+                    Coming Soon
                   </h2>
                 </div>
               </div>
             </div>
 
-            <div className="col xl12 l12 m6 s12">
+            <div className="col xl12 l12 m12 s12">
               <div className="card">
                 <div className="card-content">
                   <h2 className="card-title">
@@ -37,12 +52,12 @@ class Sidebar extends Component {
                 </div>
               </div>
             </div>
-            <div className="col xl12 l12 m6 s12">
+            <div className="col xl12 l12 m12 s12">
               <div className="card">
                 <div className="card-content">
                   <span className="overflow-text card-title">Popular Tags:</span>
                   <ul>
-                    {this.props.categories.map((category, index) => (
+                    {this.state.categories.map((category, index) => (
                       <li key={category} className="left-align collection">
                         <Link
                           key={category + "1"}

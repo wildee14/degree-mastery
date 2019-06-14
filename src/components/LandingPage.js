@@ -9,29 +9,20 @@ import axios from "axios";
 class LandingPage extends Component {
   state = {
     blogs: [],
-    categories: []
   };
 
   componentDidMount() {
     var params = this.props.location.pathname.replace("/blogs/", "");
     if (params.includes("/")) {
-      var fetchUrl = "/api/testblogs";
+      var fetchUrl ="/api/testblogs";
     } else {
-      var fetchUrl = "/api/testblogs/" + params;
+      var fetchUrl ="/api/testblogs/" + params;
     }
     axios.get(fetchUrl)
       .then(res => res.data)
       .then(resjson =>
         this.setState({
           blogs: resjson.blogs
-        })
-      );
-
-    axios.get("/api/categories")
-      .then(res => res.data)
-      .then(resjson =>
-        this.setState({
-          categories: resjson
         })
       );
   }
@@ -63,7 +54,7 @@ class LandingPage extends Component {
             </div>
           </div>
           <div className="col xl3 l3 m12 s12">
-            <Sidebar categories={this.state.categories} />
+            <Sidebar />
           </div>
         </div>
         <Footer />

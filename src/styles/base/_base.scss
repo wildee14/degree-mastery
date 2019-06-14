@@ -380,3 +380,18 @@ p {
   height: 75px;
   padding: 10px;
 }
+.mobile-friendly{
+  display: none;
+}
+@media (max-width: 650px) {
+  .blogText{
+    padding: 0;
+  }
+}
+@media (max-width: 1000px) {
+  .mobile-friendly{
+    display: block;
+    text-align: center;
+    padding: 1em 0;
+  }
+}
