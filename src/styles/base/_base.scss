@@ -263,7 +263,8 @@ p {
 }
 .blogText{
   .collection-item {
-    text-align: center;
+    text-align: left;
+    @extend .blogText;
   }
 }
 @media (max-width: 675px) {
