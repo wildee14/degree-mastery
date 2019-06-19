@@ -30,7 +30,6 @@ class TopicPage extends Component {
     return (
       <div>
         <Header />
-        <HeaderImage />
         <div className="row background">
           <div className="col xl9 l9 m10 s10">
             <div className="App">

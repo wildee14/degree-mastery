@@ -9,7 +9,8 @@ html {
 }
 
 body {
-  font-family: "league-gothic", "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  // font-family: "Roboto","league-gothic", "Open Sans", Helvetica, Arial, sans-serif;
   font-size: $m-size;
   color: #666;
   -webkit-font-smoothing: antialiased;
@@ -282,11 +283,24 @@ p {
     font-size: large;
   }
 }
+.center-align{
+  margin-top: 50px;
+  font-weight: 900;
+}
 .header-image {
+  // width: 100%;
+  // height: 250px;
+  // background-image: url('/images/budgeting.jpeg');
+  // background-position: center; /* Center the image */
+  // background-repeat: no-repeat; /* Do not repeat the image */
+  // background-size: cover;
+  background-color: #2f2925;
+
+}
+.grad {
   width: 100%;
-  height: 150px;
-  // background-image: url("https://www.desktopbackground.org/download/3440x1440/2012/03/23/363282_graduation-wallpapers-gallery_4657x3126_h.jpg");
-  background-image: url('/images/graduation.jpg');
+  height: 250px;
+  background-image: url('/images/budgeting.jpeg');
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;
@@ -301,15 +315,36 @@ p {
                                   supported by Chrome and Opera */
 }
 .header-text {
-  margin: 0;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 150px;
-  background-color: #ffffff;
-  color: rgba(0, 0, 0, 0.5);
-  opacity: 0.7;
-  filter: alpha(opacity=60);
+  // line-height: 250px;
+  color: white;
   text-transform: uppercase;
+  font-size: 5rem;
+  margin: 0;
+}
+.no-padding {
+  padding: 10px 0 !important;
+  margin: 0;
+}
+.header-nav {
+  background-color: #2f2925;
+}
+@media (max-width: 1000px) {
+  .header-text {
+    font-size: 3.5rem;
+    padding: 1.5em 0;
+  }
+  .grad {
+    display: none;
+  }
+  .center-align {
+    margin: 0;
+  }
+
+}
+@media (max-width: 600px) {
+  .header-text {
+    font-size: 2rem;
+  }
 }
 
 .footer {

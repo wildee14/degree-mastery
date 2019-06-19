@@ -38,21 +38,18 @@ class BlogDirectory extends Component {
     return (
       <div>
         <Header />
-        <HeaderImage />
         <div className="row background">
-          <div className="col xl12 l12 m12 s12">
+          <div className="col xl9 l8 m12 s12">
             <div className="App">
               <div>
                 <h1 className="center posts">
                   <strong>Blog Directory</strong>
                 </h1>
-                <div>
-                  <BlogTable blogs={this.state.blogs} />
-                </div>
+                <BlogTable blogs={this.state.blogs} />
               </div>
             </div>
           </div>
-          <div className="col xl8 offset-xl2 l8 offset-l2 m10 offset-m1 s12">
+          <div className="col xl3 l4 m10 offset-m1 s12">
             <Sidebar  />
           </div>
         </div>

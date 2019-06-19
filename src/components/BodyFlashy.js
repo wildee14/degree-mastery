@@ -6,7 +6,6 @@ import HeaderImage from "./HeaderImage";
 const BodyFlashy = () => (
   <div>
     <Header />
-    <HeaderImage />
     <div className="cool">
       <div className="container">
         <div className="room">

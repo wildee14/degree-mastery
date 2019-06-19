@@ -27,7 +27,6 @@ class TopicDirectory extends Component {
     return (
       <div>
         <Header />
-        <HeaderImage />
         <div className="row background">
           <div className="col xl12 l12 m12 s12">
             <div className="App">

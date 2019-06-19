@@ -4,7 +4,7 @@ import BlogPageContent from "./BlogPageContent";
 import AppRouter from "../routers/AppRouter";
 
 const Footer = props => (
-  <footer className="footer red darken-3">
+  <footer className="footer header-nav">
     <div className="nav-wrapper">
       <div className="container center">
         <a target="_blank" rel="noreferrer" href="https://www.instagram.com/degreemastery101/"><img src="/images/ig.svg" className="social-icons" /></a>
