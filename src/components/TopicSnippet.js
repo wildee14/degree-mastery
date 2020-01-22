@@ -13,7 +13,7 @@ class TopicSnippet extends React.Component {
         <div className="card hoverable" style={styles}>
           <div className="card-image">
             <Link to={"/topic/" + (this.props.shortTitle)}><span></span></Link>
-            <img src="/images/budgeting.jpeg" />
+            <img src={this.props.image} />
             <span className="card-title topic-card topic-text">{this.props.title}</span>
           </div>
         </div>

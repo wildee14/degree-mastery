@@ -381,7 +381,6 @@ p {
   font-size: 2em !important;
 }
 .card-image{
-  opacity: 0.6;
   transition: 0.3s;
 }
 .card-image:hover {
@@ -389,7 +388,7 @@ p {
   transition: 0.3s;
 }
 .card-flexier{
-  width: 25%;
+  width: 33.3%;
 }
 @media (max-width: 1000px) {
   .card-flexier {
