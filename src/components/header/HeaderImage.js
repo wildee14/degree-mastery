@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AppRouter from "../routers/AppRouter";
+import AppRouter from "../../routers/AppRouter";
 
 const HeaderImage = props => (
     <div className="header-image center">

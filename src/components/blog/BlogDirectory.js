@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
-import HeaderImage from "./HeaderImage";
-import Sidebar from "./Sidebar";
+import Header from "../header/Header";
+import HeaderImage from "../header/HeaderImage";
+import Sidebar from "../sidebar/Sidebar";
 import BlogTable from "./BlogTable";
-import Footer from "./Footer";
+import Footer from "../footer/Footer";
 
 import axios from "axios";
 

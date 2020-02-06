@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import BlogPostSnippet from "./BlogPostSnippet";
-import Header from "./Header";
-import HeaderImage from "./HeaderImage";
-import Sidebar from "./Sidebar";
-import Footer from "./Footer";
+import BlogPostSnippet from "../blog/BlogPostSnippet";
+import Header from "../header/Header";
+import HeaderImage from "../header/HeaderImage";
+import Sidebar from "../sidebar/Sidebar";
+import Footer from "../footer/Footer";
 import axios from "axios";
 import TopicSnippet from "./TopicSnippet";
 

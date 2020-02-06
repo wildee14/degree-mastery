@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
-import HeaderImage from "./HeaderImage";
+import Header from "../header/Header";
+import HeaderImage from "../header/HeaderImage";
 
 const NotFoundPage = () => (
   <div>

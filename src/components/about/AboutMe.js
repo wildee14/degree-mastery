@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import moment from "moment";
-import NotFoundPage from "./NotFoundPage";
-import Header from "./Header";
-import HeaderImage from "./HeaderImage";
-import Footer from "./Footer";
+import NotFoundPage from "../misc/NotFoundPage";
+import Header from "../header/Header";
+import HeaderImage from "../header/HeaderImage";
+import Footer from "../footer/Footer";
 import axios from "axios";
 
 class AboutMe extends Component {

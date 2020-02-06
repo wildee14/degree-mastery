@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import BlogPageContent from "./BlogPageContent";
-import AppRouter from "../routers/AppRouter";
+import BlogPageContent from "../blog/BlogPageContent";
+import AppRouter from "../../routers/AppRouter";
 
 const Footer = props => (
   <footer className="footer header-nav">
