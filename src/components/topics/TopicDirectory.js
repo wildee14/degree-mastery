@@ -1,60 +1,49 @@
-import React, { Component } from "react";
-import BlogPostSnippet from "../blog/BlogPostSnippet";
+import React from 'react';
 import Header from "../header/Header";
-import HeaderImage from "../header/HeaderImage";
 import Sidebar from "../sidebar/Sidebar";
 import Footer from "../footer/Footer";
-import axios from "axios";
 import TopicSnippet from "./TopicSnippet";
+import useAxios from 'axios-hooks'
+import NotFoundPage from "../misc/NotFoundPage";
 
-class TopicDirectory extends Component {
-  state = {
-    topics: [],
-  };
+function TopicDirectory() {
+  const [{ data, loading, error }, refetch] = useAxios(
+    '/api/topics'
+  )
 
-  componentDidMount() {
-    var fetchUrl ="/api/topics" ;
-    axios.get(fetchUrl)
-      .then(res => res.data)
-      .then(resjson =>
-        this.setState({
-          topics: resjson
-        })
-      );
+  if (loading) return <p>Loading...</p>
+  if (error) return <NotFoundPage />
 
-  }
-  render() {
-    return (
-      <div>
-        <Header />
-        <div className="row background">
-          <div className="col xl12 l12 m12 s12">
-            <div className="App">
-              <div>
-                <h1 className="center posts">
-                  <strong>Topics</strong>
-                </h1>
-              </div>
-              <div className="box">
-                {this.state.topics
-                  .map(topic => (
-                    <TopicSnippet
-                      key={topic.topicName}
-                      title={topic.topicLongName}
-                      shortTitle={topic.topicName}
-                      image={"/images/" + topic.topicName + ".jpg"}
-                    />
-                  ))
-                }
-              </div>
+  return (
+    <div>
+      <Header />
+      <div className="row background">
+        <div className="col xl12 l12 m12 s12">
+          <div className="App">
+            <div>
+              <h1 className="center posts">
+                <strong>Topics</strong>
+              </h1>
+            </div>
+            <div className="box">
+              {data
+                .map(topic => (
+                  <TopicSnippet
+                    key={topic.topicName}
+                    title={topic.topicLongName}
+                    shortTitle={topic.topicName}
+                    image={"/images/" + topic.topicName + ".jpg"}
+                  />
+                ))
+              }
             </div>
           </div>
-            <Sidebar />
         </div>
-        <Footer />
+        <Sidebar />
       </div>
-    );
-  }
+      <Footer />
+    </div>
+  );
 }
 
 export default TopicDirectory;

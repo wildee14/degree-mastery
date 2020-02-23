@@ -1,32 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
 import BlogPostSnippet from "../blog/BlogPostSnippet";
 import Header from "../header/Header";
-import HeaderImage from "../header/HeaderImage";
 import Sidebar from "../sidebar/Sidebar";
 import Footer from "../footer/Footer";
-import axios from "axios";
 
-class TopicPage extends Component {
-  state = {
-    blogs: [],
-    topic: ""
-  };
+import useAxios from 'axios-hooks'
+import NotFoundPage from "../misc/NotFoundPage";
 
-  componentDidMount() {
-    var topic = this.props.location.pathname.replace("/topic/", "");
-    var fetchUrl ="/api/topic/" + topic;
-    this.setState({topic: topic});
-    axios.get(fetchUrl)
-      .then(res => res.data)
-      .then(resjson =>
-        this.setState({
-          blogs: resjson.blogs
-        })
-      );
-  }
+function TopicPage(props) {
 
+  const [{ data, loading, error }, refetch] = useAxios(
+    "/api/topic/" + props.location.pathname.replace("/topic/", "")
+  )
 
-  render() {
+  if (loading) return <p>Loading...</p>
+  if (error) return <NotFoundPage />
+    
+
     return (
       <div>
         <Header />
@@ -38,7 +28,7 @@ class TopicPage extends Component {
                   <strong>Blog Directory</strong>
                 </h1>
                 <div className="box">
-                  {this.state.blogs
+                  {data.blogs
                     .map(blog => (
                       <BlogPostSnippet
                         key={blog.url}
@@ -58,5 +48,4 @@ class TopicPage extends Component {
       </div>
     );
   }
-}
 export default TopicPage;
