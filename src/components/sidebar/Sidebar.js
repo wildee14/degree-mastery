@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import useAxios from 'axios-hooks'
 
 function Sidebar() {
   const [{ data, loading, error }, refetch] = useAxios(
-    '/api/categories'
+    'http://localhost:8081/api/categories'
   )
 
   if (loading) return <p>Loading...</p>

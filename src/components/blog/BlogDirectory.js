@@ -6,7 +6,7 @@ import BlogTable from "./BlogTable";
 import Footer from "../footer/Footer";
 
 function BlogDirectory(props) {
-  var fetchUrl = '/api/testblogs';
+  var fetchUrl = 'http://localhost:8081/api/testblogs';
   let url = props.location.pathname.replace("/blogs/", "");
   fetchUrl = (url.includes("/")) ? fetchUrl : `${fetchUrl}/${url}`;
   const [{ data, loading, error }, refetch] = useAxios(

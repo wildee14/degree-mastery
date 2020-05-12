@@ -7,7 +7,7 @@ import useAxios from 'axios-hooks'
 
 function BlogPageDirectory(props) {
   const [{ data, loading, error }, refetch] = useAxios(
-  '/api/testblog/'+props.location.pathname.replace("/blog/", "")
+  'http://localhost:8081/api/testblog/'+props.location.pathname.replace("/blog/", "")
   )
   if (loading) return <p>Loading...</p>
   if (error) return <NotFoundPage />

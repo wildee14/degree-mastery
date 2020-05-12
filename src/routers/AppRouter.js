@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch} from "react-router-dom";
+import { BrowserRouter, Route, Switch} from "next/link";
 import NotFoundPage from "../components/misc/NotFoundPage";
 import BlogPageDirectory from "../components/blog/BlogPageDirectory";
 import LandingPage from "../components/pages/LandingPage";

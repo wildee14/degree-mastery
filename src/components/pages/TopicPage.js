@@ -10,7 +10,7 @@ import NotFoundPage from "../misc/NotFoundPage";
 function TopicPage(props) {
 
   const [{ data, loading, error }, refetch] = useAxios(
-    "/api/topic/" + props.location.pathname.replace("/topic/", "")
+    "http://localhost:8081/api/topic/" + props.location.pathname.replace("/topic/", "")
   )
 
   if (loading) return <p>Loading...</p>

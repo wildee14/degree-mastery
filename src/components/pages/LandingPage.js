@@ -7,7 +7,7 @@ import Footer from "../footer/Footer";
 import useAxios from 'axios-hooks'
 
 function LandingPage(props) {
-  var fetchUrl = '/api/testblogs';
+  var fetchUrl = 'http://localhost:8081/api/testblogs';
   let url = props.location.pathname.replace("/blogs/", "");
   fetchUrl = (url.includes("/")) ? fetchUrl : `${fetchUrl}/${url}`;
   const [{ data, loading, error }, refetch] = useAxios(

@@ -10,6 +10,8 @@
     "sitemap": "babel-node src/components/SiteMap",
     "run-backend": "node server.js",
     "dev-server": "webpack-dev-server",
+    "dev-next": "node server.js",
+    "build-next": "next build",
     "dev": "concurrently --kill-others-on-fail \"npm run run-backend\" \"npm run dev-server\"",
     "start": "concurrently --kill-others-on-fail \"npm run run-backend\" \"npm run dev-server\""
   },
@@ -46,6 +48,7 @@
     "jest": "^24.9.0",
     "live-server": "^1.2.1",
     "moment": "^2.24.0",
+    "next": "^9.3.5",
     "node-sass": "^4.13.1",
     "normalize.css": "7.0.0",
     "npm": "^6.13.7",
