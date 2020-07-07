@@ -1,2 +1,4 @@
-# Graduate_College_In_Two_Years
+# Graduate College In Two Years
 
+React/Node Web App using Sqlite Database
+Hosted on Heroku
